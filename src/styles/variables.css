@@ -1,0 +1,226 @@
+/* TaskFlow 设计系统 — 深色霓虹主题 */
+
+:root {
+  /* 背景色 — 深蓝黑 */
+  --bg-primary: #0b0e14;
+  --bg-secondary: #111621;
+  --bg-tertiary: #161c2a;
+  --bg-hover: #1c2333;
+  --background: var(--bg-primary);
+  --card: #111621;
+  --muted: var(--bg-tertiary);
+
+  /* 主色 — 霓虹青 */
+  --accent-primary: #00e5ff;
+  --accent-secondary: #00b8d4;
+  --accent-gradient: linear-gradient(135deg, #00e5ff 0%, #00b8d4 60%, #0091ea 100%);
+  --primary-foreground: #0b0e14;
+  --accent-pink: #ff4081;
+
+  /* 功能色 — 霓虹 */
+  --success: #00e676;
+  --warning: #ffab00;
+  --danger: #ff1744;
+  --destructive: #ff1744;
+
+  /* 文字色（层次清晰、对比适中） */
+  --text-primary: #e8ecf4;
+  --text-secondary: #8f9bb3;
+  --text-tertiary: #5c677d;
+  --foreground: var(--text-primary);
+  --muted-foreground: var(--text-secondary);
+
+  /* 边框 */
+  --border-subtle: #1e2a3a;
+  --border-medium: #2a3a4e;
+  --border: var(--border-subtle);
+
+  /* 阴影 */
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-elevated: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 8px 24px rgba(0, 229, 255, 0.08);
+
+  /* 字体层级（明显、层次清晰） */
+  --font-size-caption: 12px;
+  --font-size-small: 13px;
+  --font-size-base: 15px;
+  --font-size-body: 15px;
+  --font-size-lead: 16px;
+  --font-size-title: 17px;
+  --font-size-h3: 18px;
+  --font-size-h2: 20px;
+  --font-size-h1: 22px;
+  --font-size-dashboard: 30px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --text-2xl: 1.5rem;
+  --text-xl: 1.25rem;
+  --text-lg: 1.125rem;
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.6;
+
+  /* 圆角 */
+  --radius: 6px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+
+  /* 间距 */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* 布局 */
+  --layout-header-height: 56px;
+  --layout-sidebar-width: 220px;
+  --layout-sidebar-collapsed-width: 64px;
+  --sidebar: #0d1117;
+  --sidebar-border: #1e2a3a;
+  --sidebar-foreground: #c9d1d9;
+
+  /* 状态颜色 */
+  --color-status-todo: #58a6ff;
+  --color-status-doing: #d29922;
+  --color-status-done: #3fb950;
+  --color-status-stalled: #6e7681;
+  --color-status-overdue: #f85149;
+
+  /* 优先级 */
+  --color-priority-high: #f85149;
+  --color-priority-medium: #d29922;
+  --color-priority-low: #58a6ff;
+
+  /* 图表色板 */
+  --chart-1: #00e5ff;
+  --chart-2: #00e676;
+  --chart-3: #ff4081;
+  --chart-4: #7c4dff;
+  --chart-5: #ffab00;
+
+  /* 霓虹/发光 */
+  --accent-neon: #00e5ff;
+  --accent-neon-soft: rgba(0, 229, 255, 0.08);
+  --accent-neon-glow: 0 0 12px rgba(0, 229, 255, 0.3);
+  --accent-neon-border: rgba(0, 229, 255, 0.4);
+  --shadow-glow: 0 0 16px rgba(0, 229, 255, 0.15);
+
+  /* 侧栏菜单 */
+  --menu-selected-bg: rgba(0, 229, 255, 0.12);
+  --menu-text: #8b949e;
+  --menu-text-selected: #00e5ff;
+
+  /* 仪表盘统计卡片 */
+  --stat-gradient-1: linear-gradient(135deg, #111a2e 0%, #0d1117 100%);
+  --stat-gradient-2: linear-gradient(135deg, #1a1130 0%, #0d1117 100%);
+  --stat-gradient-3: linear-gradient(135deg, #0d1f12 0%, #0d1117 100%);
+  --stat-gradient-overdue: linear-gradient(135deg, #2d0f0f 0%, #0d1117 100%);
+  --panel-chart-gradient: linear-gradient(135deg, #111621 0%, #0d1117 100%);
+  --panel-activity-gradient: linear-gradient(135deg, #191120 0%, #0d1117 100%);
+
+  /* 模态蒙层 */
+  --modal-mask-bg: rgba(0, 0, 0, 0.65);
+  --drawer-mask-bg: rgba(0, 0, 0, 0.65);
+
+  /* 错误色 */
+  --error-color: #ff1744;
+}
+
+/* 深色模式别名 — 本主题全局已是深色，data-theme="dark" 只做兼容 */
+[data-theme="dark"] {
+  --bg-primary: #0b0e14;
+  --bg-secondary: #111621;
+  --bg-tertiary: #161c2a;
+  --bg-hover: #1c2333;
+  --background: var(--bg-primary);
+  --card: #111621;
+  --muted: var(--bg-tertiary);
+  --glass-dark: rgba(17, 22, 33, 0.92);
+
+  --accent-primary: #00e5ff;
+  --accent-secondary: #00b8d4;
+  --accent-gradient: linear-gradient(135deg, #00e5ff 0%, #00b8d4 60%, #0091ea 100%);
+  --primary: #00e5ff;
+  --primary-foreground: #0b0e14;
+  --accent-pink: #ff4081;
+
+  --success: #00e676;
+  --warning: #ffab00;
+  --danger: #ff1744;
+  --destructive: #ff1744;
+
+  --text-primary: #e8ecf4;
+  --text-secondary: #8f9bb3;
+  --text-tertiary: #5c677d;
+  --foreground: var(--text-primary);
+  --muted-foreground: var(--text-secondary);
+
+  --border-subtle: #1e2a3a;
+  --border-medium: #2a3a4e;
+  --border: var(--border-subtle);
+
+  --shadow-soft: 0 4px 8px rgba(0, 0, 0, 0.5);
+  --shadow-elevated: 0 12px 32px rgba(0, 0, 0, 0.6);
+  --shadow-hover: 0 8px 24px rgba(0, 229, 255, 0.1);
+  --shadow-glow: 0 0 20px rgba(0, 229, 255, 0.2);
+
+  --modal-mask-bg: rgba(0, 0, 0, 0.65);
+  --drawer-mask-bg: rgba(0, 0, 0, 0.65);
+
+  --sidebar: #0d1117;
+  --sidebar-foreground: #c9d1d9;
+  --sidebar-primary: #00e5ff;
+  --sidebar-accent: #161c2a;
+  --sidebar-border: #1e2a3a;
+  --menu-selected-bg: rgba(0, 229, 255, 0.12);
+  --menu-text: #8b949e;
+  --menu-text-selected: #00e5ff;
+
+  --color-status-todo: #58a6ff;
+  --color-status-doing: #d29922;
+  --color-status-done: #3fb950;
+  --color-status-stalled: #6e7681;
+  --color-status-overdue: #f85149;
+  --color-priority-high: #f85149;
+  --color-priority-medium: #d29922;
+  --color-priority-low: #58a6ff;
+
+  --chart-1: #00e5ff;
+  --chart-2: #00e676;
+  --chart-3: #ff4081;
+  --chart-4: #7c4dff;
+  --chart-5: #ffab00;
+
+  --accent-neon: #00e5ff;
+  --accent-neon-soft: rgba(0, 229, 255, 0.1);
+  --accent-neon-glow: 0 0 16px rgba(0, 229, 255, 0.25);
+  --accent-neon-border: rgba(0, 229, 255, 0.4);
+
+  --stat-gradient-1: linear-gradient(135deg, #111a2e 0%, #0d1117 100%);
+  --stat-gradient-2: linear-gradient(135deg, #1a1130 0%, #0d1117 100%);
+  --stat-gradient-3: linear-gradient(135deg, #0d1f12 0%, #0d1117 100%);
+  --stat-gradient-overdue: linear-gradient(135deg, #2d0f0f 0%, #0d1117 100%);
+  --panel-chart-gradient: linear-gradient(135deg, #111621 0%, #0d1117 100%);
+  --panel-activity-gradient: linear-gradient(135deg, #191120 0%, #0d1117 100%);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  margin: 0;
+  padding: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}

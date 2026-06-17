@@ -1,0 +1,162 @@
+/* 登录/注册页共享样式 — 深色霓虹主题 */
+
+.auth-card {
+  --n-border: 1px solid var(--border-subtle);
+  --n-border-hover: 1px solid var(--border-medium);
+  --n-border-focus: 1px solid var(--accent-primary);
+}
+
+/* 标题 */
+.auth-card .title {
+  text-align: center;
+  font-size: var(--font-size-dashboard);
+  color: var(--accent-primary);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* 底部链接 */
+.auth-card .footer {
+  text-align: center;
+}
+.auth-card .footer .btn-text {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  background: var(--bg-tertiary) !important;
+  color: var(--accent-primary) !important;
+  font-weight: 500 !important;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle) !important;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.auth-card .footer .btn-text:hover {
+  background: var(--bg-hover) !important;
+  color: var(--accent-primary) !important;
+  border-color: var(--accent-neon-border) !important;
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.15);
+}
+
+/* 主按钮 */
+.auth-card .btn-block {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px !important;
+  background: var(--accent-primary) !important;
+  color: var(--primary-foreground) !important;
+  font-weight: 600 !important;
+  border: none !important;
+  border-radius: var(--radius-md) !important;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.2);
+}
+.auth-card .btn-block:hover:not(:disabled) {
+  background: var(--accent-secondary) !important;
+  box-shadow: 0 0 24px rgba(0, 229, 255, 0.4);
+}
+
+/* 输入标签 */
+.auth-card .input-label {
+  position: static !important;
+  transform: none !important;
+  left: auto !important;
+  top: auto !important;
+  display: block !important;
+  margin-bottom: 8px;
+  line-height: 1.2;
+  font-size: 14px !important;
+  color: var(--text-secondary) !important;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.auth-card .input-wrapper:focus-within .input-label {
+  color: var(--accent-primary) !important;
+}
+
+/* 输入框 */
+.auth-card .n-input {
+  border-radius: var(--radius-md);
+  background: var(--bg-tertiary) !important;
+  border: 1px solid var(--border-subtle) !important;
+  transition: all 0.2s ease;
+}
+.auth-card .n-input .n-input__border,
+.auth-card .n-input .n-input__state-border {
+  border: 1px solid var(--border-subtle) !important;
+}
+.auth-card .n-input:hover .n-input__state-border {
+  border: 1px solid var(--border-medium) !important;
+}
+.auth-card .n-input .n-input__input-el {
+  color: var(--text-primary) !important;
+  background: transparent !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  padding: 8px 12px !important;
+}
+.auth-card .n-input .n-input__placeholder {
+  color: var(--text-tertiary) !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+}
+.auth-card .n-input:hover {
+  border-color: var(--border-medium) !important;
+  background: var(--bg-tertiary) !important;
+}
+.auth-card .n-input:focus,
+.auth-card .n-input.n-input--focus {
+  border-color: var(--accent-primary) !important;
+  background: var(--bg-tertiary) !important;
+  box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.15) !important;
+}
+.auth-card .n-input .n-input__state-border {
+  border-radius: var(--radius-md) !important;
+  border: 1px solid var(--border-subtle) !important;
+}
+.auth-card .n-input:focus .n-input__state-border,
+.auth-card .n-input.n-input--focus .n-input__state-border {
+  box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.15) !important;
+  border: 1px solid var(--accent-primary) !important;
+}
+.auth-card .n-input.n-input--status-success {
+  border-color: var(--border-subtle) !important;
+  background: var(--bg-tertiary) !important;
+}
+.auth-card .n-input.n-input--status-success:focus,
+.auth-card .n-input.n-input--status-success.n-input--focus {
+  border-color: var(--accent-primary) !important;
+  background: var(--bg-tertiary) !important;
+}
+.auth-card .n-input.n-input--status-success .n-input__state-border {
+  border: 1px solid var(--border-subtle) !important;
+}
+.auth-card .n-input.n-input--status-success:focus .n-input__state-border,
+.auth-card .n-input.n-input--status-success.n-input--focus .n-input__state-border {
+  box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.15) !important;
+  border: 1px solid var(--accent-primary) !important;
+}
+.auth-card .n-input .n-input__suffix,
+.auth-card .n-input .n-input__clear {
+  color: var(--text-tertiary) !important;
+  background: transparent !important;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0 !important;
+}
+.auth-card .n-input .n-input__suffix {
+  padding-right: 12px !important;
+}
+.auth-card .n-input .n-input__suffix .n-icon,
+.auth-card .n-input .n-input__suffix .n-base-icon,
+.auth-card .n-input .n-input__suffix svg {
+  color: var(--text-tertiary) !important;
+  fill: var(--text-tertiary) !important;
+}
+.auth-card .n-input--error {
+  border-color: var(--danger) !important;
+  animation: auth-shake 0.5s ease;
+}
+@keyframes auth-shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
